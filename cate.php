@@ -264,31 +264,30 @@ while($row2=$result_f_cate->fetch_assoc()){
 							<div class="section-title">
 								<h2>Catagories</h2>
 							</div>
+							<?php $i=4;
+							foreach ($categories as $cate) {
+							?>
 							<div class="category-widget">
 								<ul>
-									<li><a href="#" class="cat-1">Web Design<span>340</span></a></li>
-									<li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
-									<li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
-									<li><a href="#" class="cat-3">CSS<span>35</span></a></li>
+									<li><a href="#" class="cat-<?=$i?>"><?php $cate['title_category'] ?><span><?php $cate['title_category'] ?></span></a></li>
+									
 								</ul>
 							</div>
+							<?php $i=$i-1;
+							if($i==0) $i=4;
+							} ?>
 						</div>
 						<!-- /catagories -->
 						
 						<!-- tags -->
 						<div class="aside-widget">
 							<div class="tags-widget">
+								<?php foreach ($categories as $cate) {
+								?>
 								<ul>
-									<li><a href="#">Chrome</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorial</a></li>
-									<li><a href="#">Backend</a></li>
-									<li><a href="#">JQuery</a></li>
-									<li><a href="#">Design</a></li>
-									<li><a href="#">Development</a></li>
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">Website</a></li>
+									<li><a href="#"><?php echo $cate['title_category'] ;?></a></li>
 								</ul>
+								<?php } ?>
 							</div>
 						</div>
 						<!-- /tags -->
@@ -353,12 +352,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div class="col-md-6">
 								<div class="footer-widget">
 									<h3 class="footer-title">Categories</h3>
+									<?php foreach ($categories as $cate) {
+									?>
 									<ul class="footer-links">
-										<li><a href="category.php">Web Design</a></li>
-										<li><a href="category.php">JavaScript</a></li>
-										<li><a href="category.php">Css</a></li>
-										<li><a href="category.php">Jquery</a></li>
+										<li><a href="category.php"><?php echo $cate['title_category']; ?></a></li>
 									</ul>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
